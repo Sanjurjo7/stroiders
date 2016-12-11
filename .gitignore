@@ -1,0 +1,8 @@
+*.pyc
+*.pyo
+app.db
+search.db
+flask
+__pycache__
+tmp/
+
