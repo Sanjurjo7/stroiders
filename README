@@ -1,0 +1,11 @@
+Stroiders will be a mining/management game similar in structure to Dwarf Fortress, but designed around space mining.
+
+Elements to consider:
+Gravity
+Vacuum
+Hazards
+Materials
+
+The game is currently written with Python3 in mind for the engine, and Blender3D in mind for the graphics.
+
+Debate about the camera orientation gladly accepted.
