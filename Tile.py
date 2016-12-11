@@ -5,8 +5,8 @@ class Tile (object):
 
     tileTypes = ('Empty', 'Floor', 'Wall')
 
-    def __init__ (self, world, x, y):
-        self.world = world
+    def __init__ (self, stage, x, y):
+        self.stage = stage
         self.x = x
         self.y = y
 
