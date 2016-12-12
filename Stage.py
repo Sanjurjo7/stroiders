@@ -10,4 +10,4 @@ class Stage(object):
         for x in range(width):
             for y in range(height):
                 tile = Tile(self, x, y)
-                self.world.append(tile)
+                self.stage.append(tile)

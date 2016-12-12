@@ -6,6 +6,6 @@ Vacuum
 Hazards
 Materials
 
-The game is currently written with Python3 in mind for the engine, and Blender3D in mind for the graphics.
+The game is currently written with Python3 in mind for the engine, and Blender3D in mind for the graphics. An honest effort will be applied to keep the game code and the graphics code separate should a desire to use another visual platform arise.
 
 Debate about the camera orientation gladly accepted.

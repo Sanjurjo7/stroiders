@@ -4,13 +4,14 @@ class Character (object):
     skills = []
 
     def __init__(self):
-        self.inventory
-    def invMan(self):
-        # TODO: Add inventory management.
+        pass
+
+    def invCon(self):
+        # TODO: Add inventory control.
         # Discussion: Should the character have multiple slots here, determined by their gear/suit. Would be thematically appropriate.
 
-    def skillMan(self):
-        # TODO: Add skills management.
-        
+    def skillCon(self):
+        # TODO: Add skills control.
+
         # TODO: Add Decision Tree algorithms.
         # TODO: Add Pathfinding
