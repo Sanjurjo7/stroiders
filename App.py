@@ -1,6 +1,5 @@
 import pygame
 from pygame.locals import*
-from Stage import Stage
 
 class App:
     def __init__(self):
