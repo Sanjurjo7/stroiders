@@ -2,7 +2,7 @@
 *.pyo
 app.db
 search.db
-flask
+pygame
 __pycache__
 tmp/
 
