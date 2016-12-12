@@ -3,6 +3,8 @@ class Character (object):
     inventory = []
     skills = []
 
+    # TODO: Add values for character needs, thirst, hunger, 'entertainment'
+
     def __init__(self):
         pass
 
