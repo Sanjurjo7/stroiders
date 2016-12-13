@@ -39,6 +39,7 @@ class App:
         for tile in self.stage.tiles:
             thisTile = self.tileImage(tile.tileType)
             self.screen.blit(thisTile, tile.getTileLocation())
+        pygame.transform.scale(self.screen, (1280,720))
         pygame.display.flip()
     def on_cleanup(self):
         pygame.quit()
