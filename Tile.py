@@ -3,7 +3,7 @@ from random import choice
 class Tile (object):
     """ This is the abstract representation of Tiles, the building blocks of the world."""
 
-    tileTypes = ('Empty', 'Floor') 
+    tileTypes = ('empty', 'floor', 'sandstone') 
 
     def __init__ (self, stage, x, y):
         self.stage = stage
