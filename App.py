@@ -3,14 +3,16 @@ from pygame.locals import*
 from Stage import Stage
 
 class App:
+    """This is the base app for runing a 2D version of the game using pygame. It is self initializing through Python3, but has not been packaged to run independently, yet. It creates the pygame screen, and the session, and currently controls the update (event, loop, render) cycle. It is separate from the logic code in as many ways as possible, and is intended as a display parameter only."""
     bg = 0
 
     def __init__(self):
+        # Initializes the game and several necessaries. Changing the values here will alter the game's sizing and looks.
         self._running = True
         self.screen = None
         self.size = self.width, self.height = 640, 400
-        self.scale = 8
-        self.stage = Stage(40,600,8)
+        self.scale = 8 
+        self.stage = Stage(40,600,self.scale)
 
     def on_init(self):
         pygame.init()
