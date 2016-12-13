@@ -1,8 +1,6 @@
 *.pyc
 *.pyo
-app.db
-search.db
 pygame
+assetSetup
 __pycache__
-tmp/
 
