@@ -21,7 +21,7 @@ class App:
     def on_render(self):
         pass
     def on_cleanup(self):
-        pygmae.quit()
+        pygame.quit()
 
     def on_execute(self):
         if self.on_init() == False:
