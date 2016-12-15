@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import*
 from Stage import Stage
+from Spritesheet import Spritesheet
 
 class App:
     """This is the base app for runing a 2D version of the game using pygame. It is self initializing through Python3, but has not been packaged to run independently, yet. It creates the pygame screen, and the session, and currently controls the update (event, loop, render) cycle. It is separate from the logic code in as many ways as possible, and is intended as a display parameter only."""
@@ -23,9 +24,13 @@ class App:
         ss = Spritesheet('assets/spritesheetTest.png')
         self.tileSprites = ss.images_at(
                 [(0,0,8,8),(7,0,8,8),(15,0,8,8),(23,0,8,8)], (255,0,255))
+        self.yank = self.stage.tileTypes
 
     def getSprite(self, tileType):
-        
+        whichTile = [i for i, j in enumerate(self.stage.tileTypes) if j == tileType]
+        print(whichTile)
+        image = self.tileSprites[whichTile[0]]
+        return image
 
     def on_event(self, event):
         if event.type == pygame.QUIT:
