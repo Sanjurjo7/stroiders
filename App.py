@@ -24,7 +24,7 @@ class App:
         self.bg = pygame.image.load('assets/starsBKG.png')
         ss = Spritesheet('assets/spritesheetTest.png')
         self.tileSprites = ss.images_at(
-                [(0,0,8,8),(7,0,8,8),(15,0,8,8),(23,0,8,8)], (255,0,255))
+                [(0,0,8,8),(7,0,8,8),(15,0,8,8),(23,0,8,8),(0,7,8,8)], (255,0,255))
 
     def getSprite(self, tileType):
         whichTile = [i for i, j in enumerate(self.stage.tileTypes) if j == tileType]
@@ -40,10 +40,10 @@ class App:
     def on_render(self):
         self.screen.fill((0,0,0))
         self.screen.blit(self.bg, (0,0))
-        # FIXME: this needs to be Sprites
         for tile in self.stage.tiles:
             thisTile = self.getSprite(tile.tileType)
             self.screen.blit(thisTile, tile.getTileLocation())
+            print(tile.getTileLocation())
         pygame.transform.scale(self.screen, (1280,720))
         pygame.display.flip()
     def on_cleanup(self):

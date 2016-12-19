@@ -3,7 +3,7 @@ from random import choice
 class Tile (object):
     """ This is the abstract representation of Tiles, the building blocks of the world."""
 
-    tileTypes = ('empty', 'floor', 'sandstone') 
+    tileTypes = ('empty', 'floor', 'sandstone', 'grunge', 'markup') 
 
     def __init__ (self, stage, x, y):
         self.stage = stage
@@ -14,7 +14,8 @@ class Tile (object):
         self.tileType = choice(self.tileTypes)
 
     def getTileLocation (self):
-        return [self.x, self.y]
+        "Returns a tile's x,y tuple for the tile."
+        return (self.x, self.y)
 
     def setTileType (self, targetType):
         if targetType in self.tileTypes:
