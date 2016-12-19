@@ -9,7 +9,7 @@ class App:
     tileSprites = []
 
     def __init__(self):
-        # Initializes the game and several necessaries. Changing the values here will alter the game's sizing and looks.
+        "Initializes the game and several necessaries. Changing the values here will alter the game's sizing and looks."
         self._running = True
         self.screen = None
         self.size = self.width, self.height = 640, 400
@@ -17,6 +17,7 @@ class App:
         self.stage = Stage(40,600,self.scale)
 
     def on_init(self):
+        "On init several other startups will also be called."
         pygame.init()
         self.screen = pygame.display.set_mode(self.size, pygame.HWSURFACE | pygame.DOUBLEBUF)
         self._running = True
@@ -24,11 +25,9 @@ class App:
         ss = Spritesheet('assets/spritesheetTest.png')
         self.tileSprites = ss.images_at(
                 [(0,0,8,8),(7,0,8,8),(15,0,8,8),(23,0,8,8)], (255,0,255))
-        self.yank = self.stage.tileTypes
 
     def getSprite(self, tileType):
         whichTile = [i for i, j in enumerate(self.stage.tileTypes) if j == tileType]
-        print(whichTile)
         image = self.tileSprites[whichTile[0]]
         return image
 
