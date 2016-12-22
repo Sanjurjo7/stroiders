@@ -1,18 +1,24 @@
 import pygame
-import Tile
 
 class Spritesheet (object):
+
+    sheet_map = {
+        'empty':(24,24,8,8),
+        'regolith':(0,8,8,8),
+        'stone':(24,8,8,8)
+    }
+
     def __init__(self, filename):
         try:
             self.sheet = pygame.image.load(filename).convert()
         except pygame.error:
             print('Unable to load spritesheet image: ' + filename + '.')
             raise
-    # Load a specific image from a specific rectangle
-    # FIXME: This needs to be localized here, with input.
-    def image_at(self, rectangle, colorkey = None):
+
+    # FIXME:This isn't working correctly. Doesn't seem to be capturing an image to return. 
+    def image_by_type(self, tile_type, colorkey = None):
         "Loads image from x,y,x+offset,y+offset"
-        rect = pygame.Rect(rectangle)
+        rect = pygame.Rect(self.sheet_map[tile_type])
         image = pygame.Surface(rect.size).convert()
         image.blit(self.sheet, (0,0), rect)
         if colorkey is not None:
@@ -21,9 +27,11 @@ class Spritesheet (object):
             image.set_colorkey(colorkey, pygame.RLEACCEL)
         return image
     # Load a whole bunch of images and return them as a list
-    def images_at(self, rects, colorkey = None):
+
+    def images_tile_list(self, tile_types, colorkey = None):
         "Loads multiple images, supply a list of coordinates"
-        return [self.image_at(rect, colorkey) for rect in rects]
+        return [self.image_by_type(tile_type, colorkey) for tile_type in tile_types]
+
     # Load a whole strip of images
     def load_strip(self, rect, image_count, colorkey = None):
         "Loads a strip of images and returns them as a list"
