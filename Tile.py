@@ -1,4 +1,3 @@
-from random import choice
 
 class Tile (object):
     """ This is the abstract representation of Tiles, the building blocks of the world."""
@@ -9,7 +8,7 @@ class Tile (object):
         self.y = y
 
         "initializes the tile with a random type from the types list"
-        self.tile_type = choice(self.stage.tile_types)
+        self.tile_type = self.stage.tile_types()
 
     def get_tile_location (self):
         "Returns a tile's x,y tuple for the tile."

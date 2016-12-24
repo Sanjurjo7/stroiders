@@ -4,7 +4,7 @@ class Spritesheet (object):
 
     sheet_map = {
         'empty':(24,24,8,8),
-        'regolith':(0,8,8,8),
+        'regolith':(8,0,8,8),
         'stone':(24,8,8,8)
     }
 
