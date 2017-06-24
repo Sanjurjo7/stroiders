@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import*
-from Stage import Stage
-from Spritesheet import Spritesheet
+from stroiders.Modules import Stage
+from stroiders.Modules import Spritesheet
 
 class App:
     """This is the base app for runing a 2D version of the game using pygame. It is self initializing through Python3, but has not been packaged to run independently, yet. It creates the pygame screen, and the session, and currently controls the update (event, loop, render) cycle. It is separate from the logic code in as many ways as possible, and is intended as a display parameter only."""

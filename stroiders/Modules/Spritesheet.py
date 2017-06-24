@@ -4,8 +4,9 @@ class Spritesheet (object):
 
     sheet_map = {
         'empty':(24,24,8,8),
-        'regolith':(8,0,8,8),
-        'stone':(24,8,8,8)
+        'regolith':(16,0,8,8),
+        'stone':(24,8,8,8),
+        'platinum':(0,0,8,8)
     }
 
     def __init__(self, filename):
@@ -15,7 +16,6 @@ class Spritesheet (object):
             print('Unable to load spritesheet image: ' + filename + '.')
             raise
 
-    # FIXME:This isn't working correctly. Doesn't seem to be capturing an image to return. 
     def image_by_type(self, tile_type, colorkey = None):
         "Loads image from x,y,x+offset,y+offset"
         rect = pygame.Rect(self.sheet_map[tile_type])

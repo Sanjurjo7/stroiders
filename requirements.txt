@@ -1,0 +1,2 @@
+pygame==1.9.3
+stroiders==0.1

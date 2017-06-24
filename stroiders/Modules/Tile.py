@@ -8,10 +8,10 @@ class Tile (object):
         self.y = y
 
         "initializes the tile with a random type from the types list"
-        self.tile_type = self.stage.tile_types()
+        self.tile_type = self.stage.tile_type_initializer()
 
     def get_tile_location (self):
-        "Returns a tile's x,y tuple for the tile."
+        "Returns an x,y tuple for the tile."
         return (self.x, self.y)
 
     def set_tile_type (self, target_type):
